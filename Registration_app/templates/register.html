@@ -3,11 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <title>Register - Electricity Complaints System</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css')}}">
 </head>
 <body>
   <div class="register-container">
-    <IMG SRC="IMAGE.jpeg" ALT="IMAGE"></IMG>
+    <IMG SRC="{{ url_for('static', filename='IMAGE.jpeg')}}" ALT="IMAGE"></IMG>
     <h2>User Registration</h2>
     <form action="/register" method="POST">
       <h6>FULL NAME</h6>    
