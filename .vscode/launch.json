@@ -6,7 +6,7 @@
         
             "request": "launch",
             
-            "file":"E:/ELECTRICITY COMPLAINT SYSTEM/Registration_app/templates/register.html"
+            "file":"E:/ELECTRICITY COMPLAINT SYSTEM/Registration_app/templates/"
         }
 
     ]
