@@ -1,0 +1,45 @@
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <title>Electricity Complaints</title>
+</head>
+<body>
+    <h1>Welcome {{ user_name }}</h1>
+    <p>This is the homepage of the Electricity Complaints Management System.</p>
+    <a href="/register">Register</a> | <a href="/login">Login</a>
+</body>
+</html>-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Electricity Complaints Management System</title>
+  <link rel="stylesheet" href="{{ url_for('static',filename='style.css')}}">
+</head>
+<body>
+  <header>
+    <h1>Electricity Complaints Management System</h1>
+    <nav>
+      <ul>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="admin.html">Admin Panel</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="intro">
+      <h2>Welcome!</h2>
+      <p>This system allows users to register electricity-related complaints online, track them, and get them resolved efficiently through our technician and admin interface.</p>
+      <a href="register.html" class="btn">Get Started</a>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Electricity Complaints System. All rights reserved.</p>
+  </footer>
+</body>
+</html>
