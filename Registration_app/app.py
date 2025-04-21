@@ -1,18 +1,18 @@
 from flask import Flask , render_template,request,redirect,send_from_directory
 from openpyxl import Workbook,load_workbook
-import openpyxl
+
 import os
 
 app=Flask(__name__)
 excel_file="Registration_data.xlsx"
 
-'''if not os.path.exists(excel_file): 
+if not os.path.exists(excel_file): 
     wb= Workbook()
     ws=wb.active
-    ws.append(["FULL NAME","EMAIL ID"
+    ws.append(["FULL NAME","USER NAME","EMAIL ID"
                ,"PHONE NUMBER","ADDRESS","PASSWORD","CONFIRM PASSWORD","ROLE"])
     wb.save(excel_file)
-'''
+
 
 
 @app.route('/favicon.ico')
@@ -37,6 +37,7 @@ def fix_register():
 def register():
     if request.method=='POST':
         name=request.form.get('name')
+        uname=request.form.get('uname')
         email=request.form.get('email')
         phone=request.form.get('phone')
         address=request.form.get('address')
@@ -47,24 +48,11 @@ def register():
 
         wb=load_workbook(excel_file)
         ws=wb.active
-        ws.append([name,email,phone,address,password,confirm_password,role])
+        ws.append([name,uname,email,phone,address,password,confirm_password,role])
         wb.save(excel_file)
 
         return render_template('success.html')
     return  render_template('register.html')
-#return redirect("/register")
-
-
-@app.route('/view_data')
-def view_data():
-    data=read_excel_data()
-    return render_template('view_data.html',data=data)
-
-
-def read_excel_data():
-    wb=openpyxl.load_workbook('Registration_data.xlsx')
-    sheet=wb.active
-    return [row  for row in sheet.iter_rows(values_only=True)]
 
 
 
